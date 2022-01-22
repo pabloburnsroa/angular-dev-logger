@@ -1,0 +1,29 @@
+<div class="card card-body mb-3">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group mb-3">
+      <label for="log" class="form-label">Log</label>
+      <input
+        name="text"
+        [(ngModel)]="text"
+        type="text"
+        class="form-control"
+        id="log"
+        aria-describedby="logtext"
+      />
+    </div>
+    <input
+      [disabled]="!this.text"
+      type="submit"
+      class="btn btn-primary me-2"
+      value="Add Log"
+    />
+    <button
+      (click)="clearState()"
+      type="button"
+      class="btn btn-warning"
+      [hidden]="!this.text"
+    >
+      Clear
+    </button>
+  </form>
+</div>
